@@ -1,0 +1,88 @@
+@startuml mascota 
+
+Package Mascota{
+    class Mascota {
+        -panda:Panda
+        -perro:Perro 
+        -guacamaya:Guacamaya 
+    }
+    class Panda
+    class Perro
+    class Guacamaya
+}
+Package Alimento{
+    class Alimento{
+        -comida:Comida
+        -croquetas:Croquetas
+
+
+    }
+    class Bambu
+    class Frutas
+    class Manzana
+    class Croquetas 
+    Class Semillas 
+    class Alimentos{
+        -frutas:frutas
+        -bambu:Bambu
+        -manzana:Manzana 
+    }
+    class Comida{
+        -uvas:Uvas
+        -semillas:Semillas 
+    } 
+    class Uvas 
+}
+package Juguete{
+    class Juguete
+    {
+        -frisbee:Frisbee
+        -pelota:Pelota
+    }
+    class Frisbee
+    class Pelota
+}
+package siesta {
+    class Dormir
+    class 12horas
+    class 14horas
+    class Siesta
+    
+}
+
+
+ 
+
+
+
+Mascota *--o Guacamaya 
+Mascota *--o Panda
+Mascota *--o Perro  
+Juguete *--o Frisbee
+Juguete *--o Pelota 
+Panda *--o Alimentos
+Panda *--o Juguete
+Panda *--o Dormir
+Alimentos *--o Bambu
+Alimentos *--o Frutas
+Alimento *--o Croquetas
+Frutas *--o Manzana
+Perro *--o Juguete   
+Dormir *--o 14horas
+Siesta *--o 12horas 
+Perro *--o Siesta 
+Perro *--o Alimento 
+Guacamaya *--o Comida 
+Comida *--o Semillas
+Comida *--o Uvas  
+Guacamaya *--o Comida 
+
+
+
+
+
+
+
+
+
+@enduml
